@@ -1,14 +1,15 @@
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Chicago Pro Teams</title>
+        <title>JSP Page</title>
     </head>
+    
+    <% String table = (String) request.getAttribute("table"); %>
+    
     <body>
-        <h1>Chicago Pro Teams Database</h1>
-        
-        <a href="read">View All Teams</a>
+        <h1>Chicago Pro Teams</h1>
+        <%= table %>
     </body>
 </html>
