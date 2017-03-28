@@ -1,21 +1,33 @@
 table {
     border-collapse: collapse;
-    background-color: #F08080;
     width: 1250px;
     height: 500px;
 }
 
 th {
+    background-color: #696969;
+    color: #FFFFFF;
+}
+
+tr:nth-child(odd) {
+    background-color: #F08080;
+    color: #FFFFFF;
+}
+
+tr:nth-child(odd):hover {
+    background-color: #CCCCCC;
+}
+
+tr:nth-child(even) {
     background-color: #FFFF99;
     color: #696969;
 }
 
-tr:hover {
+tr:nth-child(even):hover {
     background-color: #CCCCCC;
 }
 
 td {
-    color: #FFFFFF;
     text-align: center;
     vertical-align: middle;
 }
@@ -26,7 +38,40 @@ table, td, th {
     font-family: Verdana;
 }
 
+h1 {
+    background-color: #F08080;
+    color: #FFFFFF;
+    padding: 7px;
+    border: 2px solid black;
+}
+
+label {
+    font-family: Verdana;
+    padding: 5px;
+}
+
+input {
+    padding: 2px;
+    width: 50%;
+    height: 25px;
+}
+
+form {
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border: 2px solid black;
+    width: 40%;
+    padding: 5px;
+}
+
 .myDesign {
     background-color: #D2B48C;
     padding: 5px;
+}
+
+.formDesign {
+    background-color: #D2B48C;
+    padding: 5px;
+    width: 100%;
+    height: 600px;
 }
