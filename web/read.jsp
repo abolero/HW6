@@ -11,5 +11,10 @@
     <body>
         <h1>Chicago Pro Teams</h1>
         <%= table %>
+        
+        <br><br>
+        
+        <a href ="add">Add A New Team</a>
+        
     </body>
 </html>
