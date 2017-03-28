@@ -1,0 +1,32 @@
+table {
+    border-collapse: collapse;
+    background-color: #F08080;
+    width: 1250px;
+    height: 500px;
+}
+
+th {
+    background-color: #FFFF99;
+    color: #696969;
+}
+
+tr:hover {
+    background-color: #CCCCCC;
+}
+
+td {
+    color: #FFFFFF;
+    text-align: center;
+    vertical-align: middle;
+}
+
+table, td, th {
+    border: 3px solid #FFFFFF;
+    padding: 5px;
+    font-family: Verdana;
+}
+
+.myDesign {
+    background-color: #D2B48C;
+    padding: 5px;
+}

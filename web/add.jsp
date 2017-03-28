@@ -4,8 +4,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Add A New Team</title>
+        <link rel="stylesheet" type="text/css" href="xstylesheet.css" />
     </head>
     <body>
+        <div class="myDesign">
         <h1>Add A New Team</h1>
         
         <form name="addForm" action="addTeam" method="get">
@@ -26,5 +28,6 @@
             <br>
             <input type="submit" name="submit" value="Submit" />
         </form>
+        </div>
     </body>
 </html>
