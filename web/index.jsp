@@ -12,6 +12,8 @@
         <h1>Chicago Pro Teams Database</h1>
         
         <a href="read">View All Teams</a>
+        <br> <br>
+        <a href="search.jsp">Search Teams</a>
         </div>
     </body>
 </html>

@@ -1,4 +1,3 @@
-
 package dbHelpers;
 
 import java.io.IOException;
@@ -13,24 +12,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Teams;
 
-public class ReadQuery {
+public class SearchQuery {
     
     private Connection conn;
     private ResultSet results;
     
-    public ReadQuery(){
+    public SearchQuery(){
         
         Properties props = new Properties();
         InputStream instr = getClass().getResourceAsStream("dbConn.properties");
         try {
             props.load(instr);
         } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             instr.close();
         } catch (IOException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         String driver = props.getProperty("driver.name");
@@ -40,27 +39,28 @@ public class ReadQuery {
         try {
             Class.forName(driver);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
             conn = DriverManager.getConnection(url, username, passwd);
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         
     }
     
-    public void doRead() {
+    public void doSearch(String teamName){
         
         try {
-            String query = "SELECT * FROM teams ORDER BY teamID ASC";
+            String query = "SELECT * FROM teams WHERE UPPER(teamName) LIKE ? ORDER BY teamID ASC";
             
             PreparedStatement ps = conn.prepareStatement(query);
+            ps.setString(1, "%" + teamName.toUpperCase() + "%");
             this.results = ps.executeQuery();
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
         
     }
     
@@ -143,7 +143,7 @@ public class ReadQuery {
                 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SearchQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         table += "</table>";
