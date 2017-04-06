@@ -8,12 +8,22 @@
         <link rel="stylesheet" type="text/css" href="xstylesheet.css" />
     </head>
     <body>
-        <div class="myDesign">
-        <h1>Chicago Pro Teams Database</h1>
-        
-        <a href="read">View All Teams</a>
-        <br> <br>
-        <a href="search.jsp">Search Teams</a>
+        <div class="wrap">
+            <div class="myDesign">
+
+                <%@ include file="includes/header.jsp" %>
+
+                <%@ include file="includes/menu.jsp" %>
+
+                <div class="main">    
+
+                    <h1>Chicago Pro Teams Database</h1>
+
+                </div>
+
+                <%@ include file="includes/footer.jsp" %>
+
+            </div>
         </div>
     </body>
 </html>
