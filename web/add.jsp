@@ -8,7 +8,7 @@
     </head>
     <body>
         <div class="wrap">
-            <div class="formDesign">
+            <div class="myDesign">
 
                 <%@ include file="includes/header.jsp" %>
 

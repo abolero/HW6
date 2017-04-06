@@ -26,9 +26,6 @@
 
                     <br><br>
 
-                    <a href ="add">Add A New Team</a>
-                    <br> <br>
-                    <a href="search.jsp">Search Teams</a>
                 </div>
 
                 <%@ include file="includes/footer.jsp" %>
