@@ -99,6 +99,13 @@ public class SearchQuery {
                 table += "</th>";
         
         try {
+            if(!this.results.isBeforeFirst()){
+                
+                table += "<tr>";
+                table += "<td colspan='7' >Sorry, no such team exists in this database</td>";
+                table += "</tr>";
+            }
+            else{
             while(this.results.next()){
                 
                 Teams team = new Teams();
@@ -108,7 +115,7 @@ public class SearchQuery {
                 team.setFirstYear(this.results.getInt("firstYear"));
                 team.setChampionships(this.results.getInt("championships"));
                 team.setCoach(this.results.getString("coach"));
-                    
+                
                 
                 table += "<tr>";
                 table += "<td>";
@@ -140,6 +147,7 @@ public class SearchQuery {
                 table += "</td>";
                 
                 table += "</tr>";
+            }
                 
             }
         } catch (SQLException ex) {
@@ -149,6 +157,7 @@ public class SearchQuery {
         table += "</table>";
         
                 return table;
+        
               
         
     }
